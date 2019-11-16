@@ -29,11 +29,11 @@ public class Jarnan extends JFrame{
  	public String str;
  	public int strInt;
 
- TextArea txt_AreaCodigo = new TextArea(10, 70);
- TextArea txt_AreaResultado = new TextArea(10, 70);
+ 	TextArea txt_AreaCodigo = new TextArea(10, 70);
+	TextArea txt_AreaResultado = new TextArea(10, 70);
  
-public ArrayList<String> setvariavel = new ArrayList<String>();
-public ArrayList<String> getvariavel = new ArrayList<String>();
+	public ArrayList<String> setvariavel = new ArrayList<String>();
+	public ArrayList<String> getvariavel = new ArrayList<String>();
 
 	
  public Jarnan() {
@@ -54,20 +54,20 @@ public ArrayList<String> getvariavel = new ArrayList<String>();
 			
 		 
 		 	painel = new JPanel();
-		    painel.add(txt_AreaCodigo);
-		    b=new JButton("Run");
-	        b.setBounds(100, 150, 150, 100);
+			painel.add(txt_AreaCodigo);
+		    	b=new JButton("Run");
+	       		b.setBounds(100, 150, 150, 100);
 			b.setFont(new Font("Verdana", Font.BOLD, 14));
 			painel.add(b);
 			label=new JLabel("Console:");
-	        painel.add(label);
+	        	painel.add(label);
 			painel.add(txt_AreaResultado);
-		    painel.setVisible(true);
-		    painel.setFocusable(false);
+			painel.setVisible(true);
+			painel.setFocusable(false);
 			painel.setLayout(null);
-	      painel.setBounds(10, 10, 10, 10);
-	      painel.setLayout(new FlowLayout());
-	      b.setLayout(new FlowLayout());	
+	     		painel.setBounds(10, 10, 10, 10);
+	      		painel.setLayout(new FlowLayout());
+	      		b.setLayout(new FlowLayout());	
 			txt_AreaCodigo.setFocusable(true);
 			txt_AreaCodigo.setCaretPosition(txt_AreaCodigo.getText().length());
 			txt_AreaResultado.setEditable(false);

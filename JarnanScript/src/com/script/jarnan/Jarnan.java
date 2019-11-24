@@ -1,6 +1,8 @@
 package com.script.jarnan;
 
-
+/**
+ * @author Ronan Bastos (https://github.com/ronanbastos)
+ */
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.TextArea;

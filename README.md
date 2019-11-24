@@ -3,31 +3,31 @@
 JarNan type script
 
 
-jarNan é uma linguagem de script não tipada simples de java,
-com objetivo de facilitar o aprendizagem no java e incurta o codigo.Aplicação java com objetivo de criar uma 
-interface jframe com sua própria linguagem de programação. 
-___________________________________________________________________________
+jarNan é uma linguagem do tipo script otimização com uso da base java...
+Foi feita uma interface jframe com sua própria estilo de programação pura e simples.
+A aplicação tem uma meta de implementar um minerado de dados xls,xlsx e csv com base em java puro.
+_______________________________________________________________________________________________________________
 
-1.criando variavis dentro do linguagem, o uso do : ser para separar a variavel do valor.
+1.criando variavis dentro do linguagem, o uso do : ser para separar a variavel do valor.[ ]
 
-x:["10"] 
-x:[10]
-x:1.0
-x:10
-x:"10"
+x:["10"] [ ] 
+x:[10]   [ ]
+x:1.0    [ ]
+x:10     [x]
+x:"10"   [x]
 
-___________________________________________________________________________
+_______________________________________________________________________________________________________________
 
-2.print e igual a pr:"valor do print".
+2.print e igual a pr: valor do print.[x]
 
-pr:'ola mundo'
-___________________________________________________________________________
-3.verifica variavel
+pr: ola mundo
+_______________________________________________________________________________________________________________
+3.verifica variavel [ ]
 
 v:x
 
-___________________________________________________________________________
-4.Estrutura de logica (if=normal) (e=else) (elif= else if) 
+_______________________________________________________________________________________________________________
+4.Estrutura de logica (if=normal) (e=else) (elif= else if) [ ]
 
 if->10==x?
 {
@@ -42,10 +42,10 @@ el
 pr:('é maior')
 }
 
-___________________________________________________________________________
+_______________________________________________________________________________________________________________
 
 
-5.for exemplo de estrutura de repetição 
+5.for exemplo de estrutura de repetição [x]
 for->x:1(x<=10)x++
 {
 pr:('x')
@@ -55,17 +55,15 @@ for->x:10(x>=1)x--
 {
 pr:('x')
 }
-___________________________________________________________________________
-
-6.while strutura de repetição logica
+_______________________________________________________________________________________________________________
+6.while strutura de repetição logica[ ]
 
 wh-> x!=10?{
 pr:(x+'erro no sistema')
 }
+_______________________________________________________________________________________________________________
 
-___________________________________________________________________________
-
-7.switch case logica
+7.switch case logica[]
 
 sw->x{
 
@@ -82,17 +80,17 @@ br
 
 def
 }
-___________________________________________________________________________
+_______________________________________________________________________________________________________________
 
-8.conversão type
+8.conversão type[]
 
 x:"10"
 y:type.int(x)
 z:type.float(x)
 s:type.string(x)
 
-___________________________________________________________________________
-9.função e return
+_______________________________________________________________________________________________________________
+9.função e return[]
 
 void valor(
 

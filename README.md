@@ -126,8 +126,10 @@ ___________________________________________________________________________
 10.Ler dados em csv [x]
 
 padrão de verificação de grafico[x]
+
 Digitando o "g" na area de codigo [x]
-Proxima atulização  g -d c:grafico.csv col:1 []
+
+Proxima atulização  g -d c:grafico.csv col:1 [ ]
 
 
 

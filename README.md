@@ -5,7 +5,7 @@ Foi feita uma interface jframe com sua própria estilo de programação pura e s
 A aplicação tem uma meta de implementar um minerado de dados csv com base em java puro.
 
 
- ![Screenshot](https://uploaddeimagens.com.br/images/002/516/290/original/jarnan.png?1574803856)
+ ![Screenshot](https://uploaddeimagens.com.br/images/002/516/336/original/jarnan.png?1574806640)
 
 
 

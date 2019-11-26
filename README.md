@@ -30,9 +30,9 @@ x:"10"   [x]
 ____________________________________________________________________________________________________________________________________
 2.print e igual a pr: valor do print.[x]
 
-pr: ola mundo
+pr: hello world!
 
-![Screenshot](https://uploaddeimagens.com.br/images/002/516/315/original/jarnanprint.png?1574805069)
+![Screenshot](https://uploaddeimagens.com.br/images/002/516/380/original/jarnanprint.png?1574809780)
 
 
 ____________________________________________________________________________________________________________________________________

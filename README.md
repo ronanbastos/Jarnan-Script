@@ -38,11 +38,11 @@ pr: ola mundo
 _______________________________________________________________________________________________________________
 3.verifica variavel [x]
 
-v:x
+v->x
 
 ![Screenshot](https://uploaddeimagens.com.br/images/002/516/307/original/jarnanvariavel.png?1574804712)
 
-![Screenshot](https://uploaddeimagens.com.br/images/002/516/324/original/jarnanverificarVariavel.png?1574805930)
+![Screenshot](https://uploaddeimagens.com.br/images/002/516/351/original/jarnanverificarVariavel.png?1574808128)
 
 
 _______________________________________________________________________________________________________________

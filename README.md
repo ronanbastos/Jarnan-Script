@@ -7,9 +7,10 @@ A aplicação tem uma meta de implementar um minerado de dados csv com base em j
 
  ![Screenshot](https://uploaddeimagens.com.br/images/002/516/290/original/jarnan.png?1574803856)
 
-----------------------------------------------------------------------------------------------------------------------------
-indices: [x] = Completo / [n] = Não feito  / [b]= Erro ou bug / [a]=Atulizado / [ñ]=Incompleto / [att] = Proxima atulização
-----------------------------------------------------------------------------------------------------------------------------
+
+
+Indices: [x] = Completo / [n] = Não feito  / [b]= Erro ou bug / [a]=Atulizado / [ñ]=Incompleto / [att] = Proxima atulização
+
 
 _______________________________________________________________________________________________________________
 
@@ -41,9 +42,11 @@ v:x
 
 ![Screenshot](https://uploaddeimagens.com.br/images/002/516/307/original/jarnanvariavel.png?1574804712)
 
+![Screenshot](https://uploaddeimagens.com.br/images/002/516/324/original/jarnanverificarVariavel.png?1574805930)
+
 
 _______________________________________________________________________________________________________________
-4.Estrutura de logica (if=normal) (e=else) (elif= else if) [n]
+4.Estrutura de logica (if=normal) (el=else) (elif= else if) [n]
 
 if->10==x?
 {
@@ -66,7 +69,6 @@ el
 pr:('é maior')
 
 }
-
 _______________________________________________________________________________________________________________
 
 

@@ -70,7 +70,7 @@ pr:(v:x)
 
 
 
-![Screenshot](https://uploaddeimagens.com.br/images/002/516/320/original/jarnanfor.png?1574805768)
+![Screenshot](https://uploaddeimagens.com.br/images/002/516/390/original/jarnanfor.png?1574810208)
 ____________________________________________________________________________________________________________________________________
 
 

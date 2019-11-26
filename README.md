@@ -1,7 +1,7 @@
 # Jarnan-Script
 
 jarNan é uma linguagem do tipo script otimização com uso da base java...
-Foi feita uma interface jframe com sua própria estilo de programação pura e simples.
+Foi feita uma interface jframe com sua próprio estilo de programação pura e simples.
 A aplicação tem uma meta de implementar um minerado de dados csv com base em java puro.
 
 

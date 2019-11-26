@@ -127,7 +127,7 @@ ___________________________________________________________________________
 
 Digitando o "g" na area de codigo [x]
                                               
-Proxima atulização  g -d c:grafico.csv col:1 [att]
+Proxima atulização  g -d C:\\notas.csv col:1 [att]
                                              
 
 

@@ -1,4 +1,4 @@
-# Jarnan-Script
+# Jarnan-Script 1.5v
 
 jarNan é uma linguagem do tipo script otimização com uso da base java...
 Foi feita uma interface jframe com sua próprio estilo de programação pura e simples.

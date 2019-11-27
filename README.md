@@ -1,7 +1,7 @@
 # Jarnan-Script 1.5v
 
-jarNan é uma linguagem do tipo script otimização com uso da base java...
-Foi feita uma interface jframe com sua próprio estilo de programação pura e simples.
+jarnan é uma linguagem do tipo script otimização com uso da base java...
+Foi feita uma interface jframe com programação java pura e simples.
 A aplicação tem uma meta de implementar um minerado de dados csv com base em java puro.
 
 
@@ -17,11 +17,11 @@ ________________________________________________________________________________
 
 1.criando variavis dentro do linguagem, o uso do : ser para separar a variavel do valor.[ñ]
 
-x:["10"] [ ] 
+x:["10"] [ñ] 
 
-x:[10]   [ ]
+x:[10]   [ñ]
 
-x:1.0    [ ]
+x:1.0    [ñ]
 
 x:10     [x]
 

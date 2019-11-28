@@ -131,16 +131,14 @@ ________________________________________________________________________________
 
 
 Digitando o "g" na area de codigo [x]
-                                              
-g -d C:\\notas.csv [x]
-g -d C:\\arquivos.csv -col 2 [x]
 
-![Screenshot](https://uploaddeimagens.com.br/images/002/517/992/original/jarnan1.5v.png?1574901223)
+//Cuidado com os espaços durante a linha dos comandos,pois não tem Case-sensitive ainda.  
 
-
+g -d -> C:\\notas.csv [x]
+![Screenshot](https://uploaddeimagens.com.br/images/002/518/172/original/jarnancsv1.png?1574919981)
 
 
+g -d -col C:\\arquivos.csv 2 [x]
 
-                                             
-
+![Screenshot](https://uploaddeimagens.com.br/images/002/518/173/original/jarnancsv2.png?1574920160)
 

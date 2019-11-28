@@ -132,7 +132,15 @@ ________________________________________________________________________________
 
 Digitando o "g" na area de codigo [x]
                                               
-Proxima atulização  g --d C:\\notas.csv --col:1 [att]
+g -d C:\\notas.csv [x]
+g -d C:\\arquivos.csv -col 2 [x]
+
+![Screenshot](https://uploaddeimagens.com.br/images/002/517/992/original/jarnan1.5v.png?1574901223)
+
+
+
+
+
                                              
 
 

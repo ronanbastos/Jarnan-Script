@@ -210,6 +210,7 @@ public class Jarnan extends JFrame implements Runnable {
 
 	}
 
+//___________________________________
 	@Override
 	public void run() {
 
@@ -251,15 +252,19 @@ public class Jarnan extends JFrame implements Runnable {
 
 			AtivaFor();
 		}
-		String str6 = "g";
-
+		String str6 = "g -d ";
+	
 		if (str.contains(str6)) {
-
+		//	"C:\\Users\\2025\\Desktop\\notas.csv"
+			String[] s = str.split("g -d ");
+			String dir = s[1];
+			//System.out.print(dir);
+			
+			
 			DrawLines grafico = new DrawLines();
-			grafico.valores();
+			grafico.valores(dir);
 			JFrame frame = new JFrame("Jarnan DataScience 1.0v");
 			frame.setVisible(true);
-			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			frame.setSize(250, 250);
 			frame.add(grafico);
 			frame.setLocation(50, 10);

@@ -49,7 +49,7 @@ v->x
 
 
 ____________________________________________________________________________________________________________________________________
-4.Estrutura de logica (if=normal) (el=else) (elif= else if) [n]
+4.Estrutura de logica (if=normal) (el=else) (elif= else if) [att]
 
 if->10==x?
 

@@ -1,7 +1,7 @@
 [ATT 1.5V 27/11/2019]{
 Novo visual
-Comando de csv inline g -d arquivo.csv
-Ajuste e limpesa de codigo
+Comando de csv inline g -d -> arquivo.csv e g -d -col arquivo.csv 2.
+Ajuste e limpesa de codigo e pré revisão para remover bug da 1.6 versão next.
 button e console modificado com imagem personalizada. 
 criação das pasta path e utili.
 

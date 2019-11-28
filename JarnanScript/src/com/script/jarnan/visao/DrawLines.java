@@ -143,7 +143,7 @@ public class DrawLines extends JPanel {
 
 		redrawbarra(20);
 
-		// redrawMedia(10 ,10);
+		redrawMedia(10 ,10);
 	}
 
 	public void redrawbarra(int x) {
@@ -280,10 +280,10 @@ public class DrawLines extends JPanel {
 
 	}
 
-	public void valores() {
+	public void valores(String d) {
 		try {
 			// csv file containing data
-			String strFile = "C:\\Users\\2025\\Desktop\\notas.csv";
+			String strFile = d;
 			@SuppressWarnings("resource")
 			CSVReader reader = new CSVReader(new FileReader(strFile));
 			String[] nextLine;
@@ -294,7 +294,7 @@ public class DrawLines extends JPanel {
 
 					valores[lineNumber] = nextLine[5];
 					// System.out.println("Medias do "+nextLine[0]+":"+nextLine[5]);
-					System.out.println(valores[lineNumber]);
+					//System.out.println(valores[lineNumber]);
 				}
 			} catch (NumberFormatException | IOException e) {
 

@@ -10,6 +10,7 @@ import java.awt.Graphics2D;
 import java.awt.TextArea;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.ArrayList;
 
 import javax.swing.ButtonGroup;
@@ -57,7 +58,7 @@ public class Jarnan extends JFrame implements Runnable {
 		super("Jarnan Script-1.5v");
 		Adiciona();
 		setContentPane(painel);
-		setLocation(380,150);
+		setLocation(380, 150);
 		pack();
 	}
 
@@ -115,11 +116,11 @@ public class Jarnan extends JFrame implements Runnable {
 		// painel.setLayout(new FlowLayout());
 		// b.setLayout(new FlowLayout());
 		label.setBounds(40, 235, 50, 15);
-		labeln.setBounds(60,15, 150, 15);
-		labelnn.setBounds(65,200, 150, 15);
-		labelnnn.setBounds(65,30, 150, 15);
+		labeln.setBounds(60, 15, 150, 15);
+		labelnn.setBounds(65, 200, 150, 15);
+		labelnnn.setBounds(65, 30, 150, 15);
 		labelc.setBounds(75, 240, 50, 10);
-		b.setBounds(630, 120, 19, 15);
+		b.setBounds(630, 120, 20, 20);
 		txt_AreaCodigo.setBounds(60, 50, 550, 150);
 		txt_AreaResultado.setBounds(60, 250, 550, 150);
 		txt_AreaCodigo.setFocusable(true);
@@ -135,14 +136,14 @@ public class Jarnan extends JFrame implements Runnable {
 
 			}
 		});
-		
+
 		newAction.addActionListener(new ActionListener() {
-		    public void actionPerformed(ActionEvent ae) {
-		    	Jarnan j = new Jarnan();
+			public void actionPerformed(ActionEvent ae) {
+				Jarnan j = new Jarnan();
 				j.setVisible(true);
-				j.setSize(685,455);
-				
-		    }
+				j.setSize(685, 455);
+
+			}
 		});
 
 	}
@@ -162,9 +163,7 @@ public class Jarnan extends JFrame implements Runnable {
 		String[] s = str.split(":");
 
 		setvariavel.add(new String(s[0]));
-		System.out.println(s[0]);
 		getvariavel.add(new String(s[1]));
-		System.out.print(s[1]);
 
 	}
 
@@ -210,7 +209,7 @@ public class Jarnan extends JFrame implements Runnable {
 
 	}
 
-//___________________________________
+	// ___________________________________
 	@Override
 	public void run() {
 
@@ -252,17 +251,59 @@ public class Jarnan extends JFrame implements Runnable {
 
 			AtivaFor();
 		}
-		String str6 = "g -d ";
-	
+		String str6 = "g -d -> ";
+
 		if (str.contains(str6)) {
-		//	"C:\\Users\\2025\\Desktop\\notas.csv"
-			String[] s = str.split("g -d ");
+			// "C:\\Users\\2025\\Desktop\\notas.csv"
+			String[] s = str.split("g -d -> ");
 			String dir = s[1];
-			//System.out.print(dir);
-			
-			
+			System.out.print(dir);
+
 			DrawLines grafico = new DrawLines();
 			grafico.valores(dir);
+			JFrame frame = new JFrame("Jarnan DataScience 1.0v");
+			frame.setVisible(true);
+			frame.setSize(250, 250);
+			frame.add(grafico);
+			frame.setLocation(50, 10);
+
+			File objFile = new File(dir);
+			if (objFile.exists()) {
+				if (objFile.isFile()) {
+					txt_AreaResultado.setText(txt_AreaResultado.getText() + "Set csv :" + dir + "\n");
+					txt_AreaResultado.setText(txt_AreaResultado.getText() + "Arquivo " + objFile.getName()
+							+ " existe - Tamanho bytes:" + " " + objFile.length() + "\n");
+
+				}
+			}
+		}
+
+		String str7 = "g -d -col";
+
+		if (str.contains(str7)) {
+			// "C:\\Users\\2025\\Desktop\\notas.csv"
+
+			String[] s = str.split("g -d -col");
+			String[] s1 = s[1].split(" ");
+			String dir = s1[1];
+			String col = s1[2];
+
+			File objFile = new File(dir);
+			if (objFile.exists()) {
+				if (objFile.isFile()) {
+					txt_AreaResultado.setText(txt_AreaResultado.getText() + "Set csv :" + s1[1] + "\n"
+							+ "Set valor da coluna:" + s1[2] + "\n");
+					txt_AreaResultado.setText(txt_AreaResultado.getText() + "Arquivo " + objFile.getName()
+							+ " existe - Tamanho bytes:" + " " + objFile.length() + "\n");
+
+				}
+			}
+
+			// System.out.println("aqui comanho do arquivos: " + s1[1]);
+			// System.out.println("aqui valor da coluna: "+s1[2]);
+
+			DrawLines grafico = new DrawLines();
+			grafico.valoresColDir(dir, Integer.parseInt(col));
 			JFrame frame = new JFrame("Jarnan DataScience 1.0v");
 			frame.setVisible(true);
 			frame.setSize(250, 250);

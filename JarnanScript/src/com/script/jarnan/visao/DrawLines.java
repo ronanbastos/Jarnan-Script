@@ -143,13 +143,14 @@ public class DrawLines extends JPanel {
 
 		redrawbarra(20);
 
-		redrawMedia(10 ,10);
+		redrawMedia(10, 10);
 	}
 
 	public void redrawbarra(int x) {
 		// grafico de 10 até 100
 		g2d.setColor(Color.BLUE);
-
+		String titulo = valores[0];
+		g2d.drawString("Coluna de " + titulo, 25, 25);
 		int x0 = Integer.parseInt(valores[1]);
 		int x1 = Integer.parseInt(valores[2]);
 		int x2 = Integer.parseInt(valores[3]);
@@ -287,14 +288,40 @@ public class DrawLines extends JPanel {
 			@SuppressWarnings("resource")
 			CSVReader reader = new CSVReader(new FileReader(strFile));
 			String[] nextLine;
-			int lineNumber = 0;
+			int lineNumber = -1;
 			try {
 				while ((nextLine = reader.readNext()) != null) {
 					lineNumber++;
 
 					valores[lineNumber] = nextLine[5];
 					// System.out.println("Medias do "+nextLine[0]+":"+nextLine[5]);
-					//System.out.println(valores[lineNumber]);
+					// System.out.println(valores[lineNumber]);
+				}
+			} catch (NumberFormatException | IOException e) {
+
+				e.printStackTrace();
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public void valoresColDir(String d, int col) {
+		try {
+			// csv file containing data
+			String strFile = d;
+			@SuppressWarnings("resource")
+			CSVReader reader = new CSVReader(new FileReader(strFile));
+			String[] nextLine;
+			int lineNumber = -1;
+			try {
+				while ((nextLine = reader.readNext()) != null) {
+					lineNumber++;
+
+					valores[lineNumber] = nextLine[col];
+					// System.out.println("Medias do "+nextLine[0]+":"+nextLine[5]);
+					// System.out.println(valores[lineNumber]);
 				}
 			} catch (NumberFormatException | IOException e) {
 

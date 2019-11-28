@@ -4,8 +4,10 @@ jarnan é uma linguagem do tipo script otimização com uso da base java...
 Foi feita uma interface jframe com programação java pura e simples.
 A aplicação tem uma meta de implementar um minerado de dados csv com base em java puro.
 
+![Screenshot](https://uploaddeimagens.com.br/images/002/517/978/original/jarnan1.5v.png?1574900463)
 
- ![Screenshot](https://uploaddeimagens.com.br/images/002/516/374/original/jarnan.png?1574809518)
+
+![Screenshot](https://uploaddeimagens.com.br/images/002/516/374/original/jarnan.png?1574809518)
 
 
 ____________________________________________________________________________________________________________________________________

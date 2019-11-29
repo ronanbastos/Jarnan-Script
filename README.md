@@ -132,7 +132,7 @@ ________________________________________________________________________________
 
 Digitando o "g" na area de codigo [x]
 
-//Cuidado com os espaços durante a linha dos comandos,pois não tem Case-sensitive ainda.  
+//Cuidado com os espaços durante a linha dos comandos.  
 
 g -d -> C:\\notas.csv [x]
 ![Screenshot](https://uploaddeimagens.com.br/images/002/518/172/original/jarnancsv1.png?1574919981)

@@ -43,9 +43,12 @@ ________________________________________________________________________________
 
 3.verifica variavel [x]
 
-v->x
+
+x:1500
 
 ![Screenshot](https://uploaddeimagens.com.br/images/002/516/307/original/jarnanvariavel.png?1574804712)
+
+v->x
 
 ![Screenshot](https://uploaddeimagens.com.br/images/002/516/351/original/jarnanverificarVariavel.png?1574808128)
 
@@ -54,9 +57,8 @@ ________________________________________________________________________________
 4.Estrutura de logica (if=normal) (el=else) (elif= else if) [ñ]
 x:10
 
-if-> x == 10 [x]
+if-> x == valor [x]
 
-true!
 ![Screenshot](https://uploaddeimagens.com.br/images/002/521/886/original/jarnanif__.png?1575234449)
 
 

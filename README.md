@@ -19,11 +19,11 @@ ________________________________________________________________________________
 
 1.criando variavis dentro do linguagem, o uso do : ser para separar a variavel do valor.[ñ]
 
-x:["10"] [ñ] 
+x:["10"] [x] 
 
-x:[10]   [ñ]
+x:[10]   [x]
 
-x:1.0    [ñ]
+x:1.0    [x]
 
 x:10     [x]
 
@@ -33,6 +33,8 @@ ________________________________________________________________________________
 2.print e igual a pr: valor do print.[x]
 
 pr: hello world!
+
+prln: hello world!
 
 ![Screenshot](https://uploaddeimagens.com.br/images/002/516/380/original/jarnanprint.png?1574809780)
 
@@ -50,16 +52,22 @@ v->x
 
 ____________________________________________________________________________________________________________________________________
 4.Estrutura de logica (if=normal) (el=else) (elif= else if) [ñ]
+x:10
 
-if-> 10 == x?
+if-> x == 10 [x]
 
-pr:são iguais!
+true!
+![Screenshot](https://uploaddeimagens.com.br/images/002/521/886/original/jarnanif__.png?1575234449)
 
-elif-> 10 > x
-pr:são diferentes!
 
-el
-pr:('é maior')
+elif-> 10 > x [ñ]
+
+false!
+
+el-> x < 10
+
+false!
+
 ____________________________________________________________________________________________________________________________________
 
 

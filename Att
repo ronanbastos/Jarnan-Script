@@ -1,8 +1,17 @@
+[ATT 1.6V 01/12/2019]{
+[+] verificação de ação com imagem x e v.
+[+]na pasta utili as amagem x e v da verificação que new Thread(new Runnable()),que faz ofeito de false e true.
+[+] função if com logica que retorna false e true.
+[+]função de soma de variaveis.
+[+]correção de bug na local de codigo.
+}
 [ATT 1.5V 27/11/2019]{
-Novo visual
-Comando de csv inline g -d -> arquivo.csv e g -d -col arquivo.csv 2.
-Ajuste e limpesa de codigo e pré revisão para remover bug da 1.6 versão next.
-button e console modificado com imagem personalizada. 
-criação das pasta path e utili.
+[+]Novo visual
+[+]Comando de csv inline g -d -> arquivo.csv e g -d -col arquivo.csv 2.
+[+]Ajuste e limpesa de codigo e pré revisão para remover bug da 1.6 versão next.
+[+]button e console modificado com imagem personalizada. 
+[+]criação das pasta path e utili.
 
 }
+
+

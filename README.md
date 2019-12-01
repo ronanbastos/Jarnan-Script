@@ -1,4 +1,4 @@
-# Jarnan-Script 1.5v
+# Jarnan-Script 1.6v
 
 jarnan é uma linguagem do tipo script otimização com uso da base java...
 Foi feita uma interface jframe com programação java pura e simples.
@@ -14,7 +14,7 @@ ________________________________________________________________________________
 
 Indices: [x] = Completo / [n] = Não feito  / [b]= Erro ou bug / [a]=Atulizado / [ñ]=Incompleto / [att] = Proxima atulização
 
-
+verifique as atulização: https://github.com/ronanbastos/Jarnan-Script/blob/master/Att
 ____________________________________________________________________________________________________________________________________
 
 1.criando variavis dentro do linguagem, o uso do : ser para separar a variavel do valor.[ñ]

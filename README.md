@@ -49,13 +49,13 @@ v->x
 
 
 ____________________________________________________________________________________________________________________________________
-4.Estrutura de logica (if=normal) (el=else) (elif= else if) [att]
+4.Estrutura de logica (if=normal) (el=else) (elif= else if) [ñ]
 
-if->10==x?
+if-> 10 == x?
 
 pr:são iguais!
 
-elif->10>x
+elif-> 10 > x
 pr:são diferentes!
 
 el
@@ -127,7 +127,7 @@ return x
 
 );
 ____________________________________________________________________________________________________________________________________
-10.Ler dados em csv [ñ]
+10.Ler dados em csv [x]
 
 
 Digitando o "g" na area de codigo [x]

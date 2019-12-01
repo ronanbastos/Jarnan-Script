@@ -1,9 +1,12 @@
 [ATT 1.6V 01/12/2019]{
-[+] verificação de ação com imagem x e v.
-[+]na pasta utili as amagem x e v da verificação que new Thread(new Runnable()),que faz ofeito de false e true.
-[+] função if com logica que retorna false e true.
+[+]verificador de ação com imagem x e v.
+[+]novo item na pasta utili as amagem x e v,que faz ofeito um false e true na imagem.
+[+]função de verificação de new Thread(new Runnable()).
+[+]função if com logica que retorna false e true.
 [+]função de soma de variaveis.
 [+]correção de bug na local de codigo.
+[+]função cache e clear cache.
+[+]função clear, que limpa o console.
 }
 [ATT 1.5V 27/11/2019]{
 [+]Novo visual

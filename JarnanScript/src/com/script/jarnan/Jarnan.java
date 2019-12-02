@@ -389,15 +389,14 @@ public class Jarnan extends JFrame implements Runnable {
 			System.out.println(ifvalor2);
 			if (ifvalor1.trim().equals(ifvalor2)) {
 				
-				txt_AreaResultado.setText(" ");
-				txt_AreaResultado.setText("True!");
+				txt_AreaResultado.setText("True! 1");
 			}else if((ifvalor1!=ifvalor2)&&(setvariavel.size() <= 0))
 			{
-			txt_AreaResultado.setText("False!");
+			txt_AreaResultado.setText("False! 2");
 			}else{
 			
 				for (int i = 0; i <= setvariavel.size(); i++) {
-					if ((ifvalor1.equals(setvariavel.get(i).toString()))) {
+					if (ifvalor1.equals(setvariavel.get(i).toString())) {
 
 						variavelif1 = getvariavel.get(i).toString();
 						System.out.print(variavelif1);
@@ -406,26 +405,21 @@ public class Jarnan extends JFrame implements Runnable {
 					}
 				}
 				for (int j = 0; j <= setvariavel.size(); j++) {
-					if ((ifvalor2.equals(setvariavel.get(j).toString()))) {
+					if (ifvalor2.equals(setvariavel.get(j).toString())) {
 						variavelif2 = getvariavel.get(j).toString();
 						System.out.print(variavelif2);
 						break;
 
-					}
-				
+						}
 
 					}
-				
-			
-
 				}
 			if (variavelif1.trim().equals(variavelif2)) {
 				
-				txt_AreaResultado.setText("True!");
-			}
-			else
+				txt_AreaResultado.setText("True! 3");
+			}else if(variavelif1 != variavelif2)
 			{
-				txt_AreaResultado.setText("False!");
+			txt_AreaResultado.setText("false 4");
 			}
 				
 			

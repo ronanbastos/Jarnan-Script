@@ -11,7 +11,9 @@ import java.awt.TextArea;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.time.Duration;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 import javax.swing.ButtonGroup;
 import javax.swing.Icon;
@@ -45,6 +47,8 @@ public class Jarnan extends JFrame implements Runnable {
 	JLabel labelnn;
 	JLabel labelnnn;
 	JLabel labelc;
+	JLabel labelverificartrue;
+	JLabel labelverificarfalse;
 	public String str;
 	public int[] strInt;
 	public Graphics2D g2d;
@@ -55,7 +59,7 @@ public class Jarnan extends JFrame implements Runnable {
 	public ArrayList<String> getvariavel = new ArrayList<String>();
 
 	public Jarnan() {
-		super("Jarnan Script-1.5v");
+		super("Jarnan Script-1.6v");
 		Adiciona();
 		setContentPane(painel);
 		setLocation(380, 150);
@@ -66,10 +70,14 @@ public class Jarnan extends JFrame implements Runnable {
 
 		ImageIcon imgbut = new ImageIcon("C:\\Java\\DataScience\\Utili\\btn_circled.png");
 		ImageIcon imgcons = new ImageIcon("C:\\Java\\DataScience\\Utili\\console.png");
+		ImageIcon img_verificafalse = new ImageIcon("C:\\Java\\DataScience\\Utili\\falsecheck.png");
+		ImageIcon img_verificatrue = new ImageIcon("C:\\Java\\DataScience\\Utili\\truecheck.png");
 		b = new JButton(imgbut);
 		painel = new JPanel();
 		painel.add(b);
 		label = new JLabel(imgcons);
+		labelverificartrue = new JLabel(img_verificatrue);
+		labelverificarfalse = new JLabel(img_verificafalse);
 		labelc = new JLabel("Console");
 		labeln = new JLabel("Jarnan Script ()");
 		labelnn = new JLabel("}");
@@ -107,6 +115,10 @@ public class Jarnan extends JFrame implements Runnable {
 		painel.add(labeln);
 		painel.add(labelnn);
 		painel.add(labelnnn);
+		painel.add(labelverificarfalse);
+		painel.add(labelverificartrue);
+		labelverificartrue.setVisible(true);
+		labelverificarfalse.setVisible(true);
 		painel.add(txt_AreaCodigo);
 		painel.add(txt_AreaResultado);
 		painel.setVisible(true);
@@ -119,6 +131,8 @@ public class Jarnan extends JFrame implements Runnable {
 		labeln.setBounds(60, 15, 150, 15);
 		labelnn.setBounds(65, 200, 150, 15);
 		labelnnn.setBounds(65, 30, 150, 15);
+		labelverificartrue.setBounds(593, 383, 15, 15);
+		labelverificarfalse.setBounds(593, 383, 15, 15);
 		labelc.setBounds(75, 240, 50, 10);
 		b.setBounds(630, 120, 20, 20);
 		txt_AreaCodigo.setBounds(60, 50, 550, 150);
@@ -131,6 +145,7 @@ public class Jarnan extends JFrame implements Runnable {
 		b.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
+				labelverificartrue.setVisible(true);
 
 				run();
 
@@ -142,6 +157,9 @@ public class Jarnan extends JFrame implements Runnable {
 				Jarnan j = new Jarnan();
 				j.setVisible(true);
 				j.setSize(685, 455);
+				j.setResizable(false);
+				j.setLocationRelativeTo(null);
+				timeThread();
 
 			}
 		});
@@ -149,12 +167,29 @@ public class Jarnan extends JFrame implements Runnable {
 	}
 
 	public void print() {
-		String[] s = str.split("pr:");
+		String[] s = str.split("pr: ");
 
 		for (String x1 : s) {
 
 			txt_AreaResultado.setText(txt_AreaResultado.getText() + x1);
+
 		}
+
+		timeThread();
+
+	}
+
+	public void println() {
+		String[] s = str.split("prln: ");
+
+		for (String x1 : s) {
+
+			txt_AreaResultado.setText(txt_AreaResultado.getText() + x1);
+
+		}
+		txt_AreaResultado.setText(txt_AreaResultado.getText() + "\n");
+
+		timeThread();
 
 	}
 
@@ -164,6 +199,9 @@ public class Jarnan extends JFrame implements Runnable {
 
 		setvariavel.add(new String(s[0]));
 		getvariavel.add(new String(s[1]));
+		txt_AreaResultado.setText(" ");
+		txt_AreaResultado.setText("Set: " + s[0] + " = " + s[1]);
+		timeThread();
 
 	}
 
@@ -174,14 +212,15 @@ public class Jarnan extends JFrame implements Runnable {
 			if (str.trim().equals(setvariavel.get(i).toString())) {
 				txt_AreaResultado.setText(" ");
 
-				txt_AreaResultado.setText(getvariavel.get(i).toString());
+				txt_AreaResultado.setText("Get: " + str + " = " + getvariavel.get(i).toString());
 
-				System.out.print(getvariavel.get(i).toString());
+				break;
 
 			} else {
 
 			}
 		}
+		timeThread();
 
 	}
 
@@ -205,15 +244,25 @@ public class Jarnan extends JFrame implements Runnable {
 		for (int i = x1; i <= x2; i++) {
 
 			txt_AreaResultado.setText(txt_AreaResultado.getText() + "For:" + i + "\n");
+			timeThread();
+
 		}
 
 	}
 
 	// ___________________________________
-	@Override
+
 	public void run() {
 
-		String str1 = "pr:";
+		String str0 = "prln: ";
+		str = txt_AreaCodigo.getText();
+
+		if (str.contains(str0)) {
+
+			println();
+
+		}
+		String str1 = "pr: ";
 		str = txt_AreaCodigo.getText();
 
 		if (str.contains(str1)) {
@@ -227,12 +276,14 @@ public class Jarnan extends JFrame implements Runnable {
 		if (str.contains(str2)) {
 
 			SetVariavel();
+			timeThread();
 
 		}
 		String str3 = "clear";
 		if (str.contains(str3)) {
 
 			txt_AreaResultado.setText(" ");
+			timeThread();
 
 		}
 		String str4 = "v->";
@@ -242,14 +293,16 @@ public class Jarnan extends JFrame implements Runnable {
 
 			String x = s[1];
 			str = x;
-
+			timeThread();
 			GetVariavel();
+
 		}
 		String str5 = "for";
 
 		if (str.contains(str5)) {
 
 			AtivaFor();
+
 		}
 		String str6 = "g -d -> ";
 
@@ -276,6 +329,8 @@ public class Jarnan extends JFrame implements Runnable {
 
 				}
 			}
+			timeThread();
+
 		}
 
 		String str7 = "g -d -col";
@@ -299,9 +354,6 @@ public class Jarnan extends JFrame implements Runnable {
 				}
 			}
 
-			// System.out.println("aqui comanho do arquivos: " + s1[1]);
-			// System.out.println("aqui valor da coluna: "+s1[2]);
-
 			DrawLines grafico = new DrawLines();
 			grafico.valoresColDir(dir, Integer.parseInt(col));
 			JFrame frame = new JFrame("Jarnan DataScience 1.0v");
@@ -309,8 +361,115 @@ public class Jarnan extends JFrame implements Runnable {
 			frame.setSize(250, 250);
 			frame.add(grafico);
 			frame.setLocation(50, 10);
+			timeThread();
 
 		}
+
+		String str8 = "if-> ";
+
+		if (str.contains(str8)) {
+
+			String variavelif1 = null;
+			String variavelif2 = null;
+			boolean igual = false;
+
+			String[] s = str.split("if-> ");
+			String[] s1 = s[1].split(" == ");
+
+			 if(s[1].trim().contains(" == "))
+			 {
+			 igual =true;
+			 }
+
+			String ifvalor1 = s1[0];
+			String ifvalor2 = s1[1];
+			if(igual == true)
+			{
+			System.out.println(ifvalor1);
+			System.out.println(ifvalor2);
+			if (ifvalor1.trim().equals(ifvalor2)) {
+				
+				txt_AreaResultado.setText(" ");
+				txt_AreaResultado.setText("True! 1");
+			}else if((ifvalor1!=ifvalor2)&&(setvariavel.size() <= 0))
+			{
+			txt_AreaResultado.setText("False! 2");
+			}else{
+			
+				for (int i = 0; i <= setvariavel.size(); i++) {
+					if ((ifvalor1.equals(setvariavel.get(i).toString()))) {
+
+						variavelif1 = getvariavel.get(i).toString();
+						System.out.print(variavelif1);
+						break;
+
+					}
+				}
+				for (int j = 0; j <= setvariavel.size(); j++) {
+					if ((ifvalor2.equals(setvariavel.get(j).toString()))) {
+						variavelif2 = getvariavel.get(j).toString();
+						System.out.print(variavelif2);
+						break;
+
+					}
+				
+
+					}
+				
+			
+
+				}
+			if (variavelif1.trim().equals(variavelif2)) {
+				
+				txt_AreaResultado.setText("True! 3");
+			}
+			else
+			{
+				txt_AreaResultado.setText("false 4");
+			}
+				
+			
+
+			timeThread();
+			}
+		//_____
+	}
+
+		String str9 = "cache";
+
+		if (str.contains(str9)) {
+
+			txt_AreaResultado.setText("in cache : " + setvariavel + " " + getvariavel + " \n");
+
+			timeThread();
+		}
+
+		String str10 = "clear cache";
+
+		if (str.contains(str10)) {
+
+			setvariavel.clear();
+			getvariavel.clear();
+
+			timeThread();
+			}
+		}
+
+	public void timeThread() {
+
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+
+				labelverificarfalse.setVisible(false);
+
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException ex) {
+				}
+				labelverificarfalse.setVisible(true);
+			}
+		}).start();
 
 	}
 

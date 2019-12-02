@@ -390,10 +390,10 @@ public class Jarnan extends JFrame implements Runnable {
 			if (ifvalor1.trim().equals(ifvalor2)) {
 				
 				txt_AreaResultado.setText(" ");
-				txt_AreaResultado.setText("True! 1");
+				txt_AreaResultado.setText("True!");
 			}else if((ifvalor1!=ifvalor2)&&(setvariavel.size() <= 0))
 			{
-			txt_AreaResultado.setText("False! 2");
+			txt_AreaResultado.setText("False!");
 			}else{
 			
 				for (int i = 0; i <= setvariavel.size(); i++) {
@@ -421,11 +421,11 @@ public class Jarnan extends JFrame implements Runnable {
 				}
 			if (variavelif1.trim().equals(variavelif2)) {
 				
-				txt_AreaResultado.setText("True! 3");
+				txt_AreaResultado.setText("True!");
 			}
 			else
 			{
-				txt_AreaResultado.setText("false 4");
+				txt_AreaResultado.setText("False!");
 			}
 				
 			

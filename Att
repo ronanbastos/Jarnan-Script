@@ -7,6 +7,7 @@
 [+]correção de bug na local de codigo.
 [+]função cache e clear cache.
 [+]função clear, que limpa o console.
+[+]função de grafico de linhas com comandos Point2D e Line2D.
 }
 [ATT 1.5V 27/11/2019]{
 [+]Novo visual

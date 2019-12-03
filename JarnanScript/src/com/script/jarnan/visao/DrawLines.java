@@ -2,11 +2,17 @@ package com.data.visao;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.List;
+import java.awt.Shape;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.geom.Line2D;
+import java.awt.geom.Point2D;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -14,6 +20,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Timer;
 
+import javax.swing.JComponent;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import com.opencsv.CSVReader;
@@ -25,7 +33,12 @@ public class DrawLines extends JPanel {
 	public int valorx = 10;
 	public boolean pint = true;
 	public Graphics2D g2d;
-	public String[] valores = new String[100];
+	public String[] valores = new String[500];
+	public float[] media = new float[500];
+	public int[] ValorMax = new int[500];
+	public int[] ValorMin = new int[500];
+	public int[] total = new int[500];
+	public ArrayList<String> setvalores = new ArrayList<String>();
 
 	/**
 	 * 
@@ -37,12 +50,13 @@ public class DrawLines extends JPanel {
 		super.paintComponent(g);
 		g2d = (Graphics2D) g.create();
 
-		g2d.drawOval(100, 470, 10, 10);
+		g2d.drawOval(100, 310, 10, 10);
 
 		// grafico de 10 até 100
 		// base y
+		Graphics2D g2 = (Graphics2D) g;
 
-		g.drawString("0", -1, 100);
+		g.drawString("0", -1, 210);
 		g.drawString("10", -1, 200);
 		g.drawString("20", -1, 190);
 		g.drawString("30", -1, 180);
@@ -59,6 +73,7 @@ public class DrawLines extends JPanel {
 		g.drawString("140", -2, 70);
 		g.drawString("150", -2, 60);
 		g.drawString("Dados de 10 até 150", 25, 40);
+		g.drawString("Grafico", 250, 10);
 		// base x
 		g.drawString("0", 20, 220);
 		g.drawString("1", 40, 220);
@@ -75,75 +90,84 @@ public class DrawLines extends JPanel {
 		// ____________________________________
 		// grafico de 1 até 5
 		g.drawString("Dados de media", 25, 290);
-		g.drawString("M", 5, 290);
 		g.drawString(" Total", 150, 290);
-		g.drawString("5", -1, 310);
-		g.drawString("5.5", -1, 320);
-		g.drawString("5.4", -1, 330);
-		g.drawString("5.3", -1, 340);
-		g.drawString("5.2", -1, 350);
-		g.drawString("5.1", 0, 360);
-		g.drawString("4.5", -1, 370);
-		g.drawString("4.4", -1, 380);
-		g.drawString("4.3", -1, 390);
-		g.drawString("4.2", -1, 400);
-		g.drawString("4.1", -1, 410);
-		g.drawString("4", 0, 420);
-		g.drawString("3.5", -1, 430);
-		g.drawString("3.4", -1, 440);
-		g.drawString("3.3", -1, 450);
-		g.drawString("3.2", -1, 460);
-		g.drawString("3.1", -2, 470);
-		g.drawString("3", 0, 480);
-		g.drawString("2.5", -2, 490);
-		g.drawString("2.4", -2, 500);
-		g.drawString("2.3", -2, 510);
-		g.drawString("2.2", -2, 520);
-		g.drawString("2.1", -2, 530);
-		g.drawString("2", 0, 540);
-		g.drawString("1.5", -2, 550);
-		g.drawString("1.4", -2, 560);
-		g.drawString("1.3", -2, 570);
-		g.drawString("1.2", -2, 580);
-		g.drawString("1.1", -2, 590);
-		g.drawString("1", 0, 600);
-		g.drawString("0", 0, 610);
+		g.drawString("5.5", 0, 310);
+		g.drawString("5", 0, 320);
+		g.drawString("4.5", 0, 330);
+		g.drawString("4", 0, 340);
+		g.drawString("3.5", -1, 350);
+		g.drawString("3", 0, 360);
+		g.drawString("2.5", -2, 370);
+		g.drawString("2", 0, 380);
+		g.drawString("1.5", -2, 390);
+		g.drawString("1", 0, 400);
 
-		g.drawString("5", 155, 310);
-		g.drawString("5.5", 155, 320);
-		g.drawString("5.4", 155, 330);
-		g.drawString("5.3", 155, 340);
-		g.drawString("5.2", 155, 350);
-		g.drawString("5.1", 155, 360);
-		g.drawString("4.5", 155, 370);
-		g.drawString("4.4", 155, 380);
-		g.drawString("4.3", 155, 390);
-		g.drawString("4.2", 155, 400);
-		g.drawString("4.1", 155, 410);
-		g.drawString("4", 155, 420);
-		g.drawString("3.5", 155, 430);
-		g.drawString("3.4", 155, 440);
-		g.drawString("3.3", 155, 450);
-		g.drawString("3.2", 155, 460);
-		g.drawString("3.1", 155, 470);
-		g.drawString("3", 155, 480);
-		g.drawString("2.5", 155, 490);
-		g.drawString("2.4", 155, 500);
-		g.drawString("2.3", 155, 510);
-		g.drawString("2.2", 155, 520);
-		g.drawString("2.1", 155, 530);
-		g.drawString("2", 155, 540);
-		g.drawString("1.5", 155, 550);
-		g.drawString("1.4", 155, 560);
-		g.drawString("1.3", 155, 570);
-		g.drawString("1.2", 155, 580);
-		g.drawString("1.1", 155, 590);
-		g.drawString("1", 155, 600);
-		g.drawString("0", 155, 610);
+		g.drawString("1", 155, 310);
+		g.drawString("2", 155, 320);
+		g.drawString("3", 155, 330);
+		g.drawString("4", 155, 340);
+		g.drawString("5", 155, 350);
+		g.drawString("6", 155, 360);
+		g.drawString("7", 155, 370);
+		g.drawString("8", 155, 380);
+		g.drawString("9", 155, 390);
+		g.drawString("10", 155, 400);
 
 		redrawbarra(20);
+		// redrawMedia(10);
+		redrawlinha();
+	}
 
-		redrawMedia(10, 10);
+	public void redrawlinha() {
+
+		int x0 = Integer.parseInt(valores[1]);
+		int x1 = Integer.parseInt(valores[2]);
+		int x2 = Integer.parseInt(valores[3]);
+		int x3 = Integer.parseInt(valores[4]);
+		int x4 = Integer.parseInt(valores[5]);
+		int x5 = Integer.parseInt(valores[6]);
+		int x6 = Integer.parseInt(valores[7]);
+		int x7 = Integer.parseInt(valores[8]);
+		int x8 = Integer.parseInt(valores[9]);
+		int x9 = Integer.parseInt(valores[10]);
+		int x10 = Integer.parseInt(valores[11]);
+
+		g2d.setColor(Color.BLUE);
+		Point2D p1 = new Point2D.Double(320, x10);
+		Point2D p2 = new Point2D.Double(340, x9);
+		Point2D p3 = new Point2D.Double(360, x8);
+		Point2D p4 = new Point2D.Double(380, x7);
+		Point2D p5 = new Point2D.Double(400, x6);
+		Point2D p6 = new Point2D.Double(420, x5);
+		Point2D p7 = new Point2D.Double(440, x4);
+		Point2D p8 = new Point2D.Double(460, x3);
+		Point2D p9 = new Point2D.Double(480, x2);
+		Point2D p10 = new Point2D.Double(500, x1);
+		Point2D p11 = new Point2D.Double(510, x0);
+		Line2D l1 = new Line2D.Double(p1, p2);
+		Line2D l2 = new Line2D.Double(p2, p3);
+		Line2D l3 = new Line2D.Double(p3, p4);
+		Line2D l4 = new Line2D.Double(p4, p5);
+		Line2D l5 = new Line2D.Double(p5, p6);
+		Line2D l6 = new Line2D.Double(p6, p7);
+		Line2D l7 = new Line2D.Double(p7, p8);
+		Line2D l8 = new Line2D.Double(p8, p9);
+		Line2D l9 = new Line2D.Double(p9, p10);
+		Line2D l10 = new Line2D.Double(p10, p11);
+		g2d.draw(l1);
+		g2d.draw(l2);
+		g2d.draw(l3);
+		g2d.draw(l4);
+		g2d.draw(l5);
+		g2d.draw(l6);
+		g2d.draw(l7);
+		g2d.draw(l8);
+		g2d.draw(l9);
+		g2d.draw(l10);
+
+		g2d.setColor(Color.red);
+		g2d.drawRect(250, 0, 750, 210);
+
 	}
 
 	public void redrawbarra(int x) {
@@ -175,30 +199,30 @@ public class DrawLines extends JPanel {
 		g2d.fillRect(220, 200, 10, -x10);
 
 		g2d.setColor(Color.RED);
-		g2d.drawRect(0, 200, 1000, 0);
-		g2d.drawRect(0, 210, 1000, 0);
-		g2d.drawRect(0, 190, 1000, 0);
-		g2d.drawRect(0, 180, 1000, 0);
-		g2d.drawRect(0, 170, 1000, 0);
-		g2d.drawRect(0, 160, 1000, 0);
-		g2d.drawRect(0, 150, 1000, 0);
-		g2d.drawRect(0, 140, 1000, 0);
-		g2d.drawRect(0, 130, 1000, 0);
-		g2d.drawRect(0, 120, 1000, 0);
-		g2d.drawRect(0, 110, 1000, 0);
-		g2d.drawRect(0, 100, 1000, 0);
-		g2d.drawRect(0, 90, 1000, 0);
-		g2d.drawRect(0, 80, 1000, 0);
-		g2d.drawRect(0, 70, 1000, 0);
-		g2d.drawRect(0, 60, 1000, 0);
-		g2d.drawRect(0, 50, 1000, 0);
-		g2d.drawRect(19, 220, 0, -200);
+		g2d.drawRect(0, 200, 250, 0);
+		g2d.drawRect(0, 210, 250, 0);
+		g2d.drawRect(0, 190, 250, 0);
+		g2d.drawRect(0, 180, 250, 0);
+		g2d.drawRect(0, 170, 250, 0);
+		g2d.drawRect(0, 160, 250, 0);
+		g2d.drawRect(0, 150, 250, 0);
+		g2d.drawRect(0, 140, 250, 0);
+		g2d.drawRect(0, 130, 250, 0);
+		g2d.drawRect(0, 120, 250, 0);
+		g2d.drawRect(0, 110, 250, 0);
+		g2d.drawRect(0, 100, 250, 0);
+		g2d.drawRect(0, 90, 250, 0);
+		g2d.drawRect(0, 80, 250, 0);
+		g2d.drawRect(0, 70, 250, 0);
+		g2d.drawRect(0, 60, 250, 0);
+		g2d.drawRect(0, 50, 250, 0);
+		g2d.drawRect(19, 210, 0, -200);
 
 		this.repaint();
 
 	}
 
-	public void redrawMedia(int x, int y) {
+	public void redrawMedia(int y) {
 
 		// _______________________________________________
 		// grafico de 1.1 até 5.5
@@ -270,14 +294,8 @@ public class DrawLines extends JPanel {
 		g2d.drawRect(0, 320, 170, 0);
 		g2d.drawRect(0, 310, 170, 0);
 		g2d.drawRect(0, 300, 170, 0);
-		g2d.drawRect(150, 620, 0, -350); /// linha reta
+		g2d.drawRect(150, 620, 0, -350); // retas
 		g2d.drawRect(19, 620, 0, -340);
-
-		g2d.setColor(Color.BLUE);
-
-		g2d.drawOval(x + 20, 440, 10, y);
-
-		this.repaint();
 
 	}
 
@@ -320,8 +338,7 @@ public class DrawLines extends JPanel {
 					lineNumber++;
 
 					valores[lineNumber] = nextLine[col];
-					// System.out.println("Medias do "+nextLine[0]+":"+nextLine[5]);
-					// System.out.println(valores[lineNumber]);
+
 				}
 			} catch (NumberFormatException | IOException e) {
 
@@ -333,4 +350,78 @@ public class DrawLines extends JPanel {
 
 	}
 
+	public void media(int col) {
+		try {
+			// csv file containing data
+			String strFile = JOptionPane.showInputDialog("Digite o nome do diretório ou arquivo:", 3);
+			@SuppressWarnings("resource")
+			CSVReader reader = new CSVReader(new FileReader(strFile));
+			String[] nextLine;
+			int lineNumber = -1;
+			try {
+				while ((nextLine = reader.readNext()) != null) {
+					lineNumber++;
+
+					media[lineNumber] = Integer.valueOf(nextLine[col]).intValue();
+
+				}
+			} catch (NumberFormatException | IOException e) {
+
+				e.printStackTrace();
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public void graficoMax(int col) {
+		try {
+			// csv file containing data
+			String strFile = JOptionPane.showInputDialog("Digite o nome do diretório ou arquivo:", 3);
+			@SuppressWarnings("resource")
+			CSVReader reader = new CSVReader(new FileReader(strFile));
+			String[] nextLine;
+			int lineNumber = -1;
+			try {
+				while ((nextLine = reader.readNext()) != null) {
+					lineNumber++;
+
+					ValorMax[lineNumber] = Integer.valueOf(nextLine[col]).intValue();
+
+				}
+			} catch (NumberFormatException | IOException e) {
+
+				e.printStackTrace();
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public void graficoMin(int col) {
+		try {
+			// csv file containing data
+			String strFile = JOptionPane.showInputDialog("Digite o nome do diretório ou arquivo:", 3);
+			@SuppressWarnings("resource")
+			CSVReader reader = new CSVReader(new FileReader(strFile));
+			String[] nextLine;
+			int lineNumber = -1;
+			try {
+				while ((nextLine = reader.readNext()) != null) {
+					lineNumber++;
+
+					ValorMin[lineNumber] = Integer.valueOf(nextLine[col]).intValue();
+
+				}
+			} catch (NumberFormatException | IOException e) {
+
+				e.printStackTrace();
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	}
 }

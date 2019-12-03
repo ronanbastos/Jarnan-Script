@@ -114,7 +114,7 @@ public class DrawLines extends JPanel {
 		g.drawString("10", 155, 400);
 
 		redrawbarra(20);
-		// redrawMedia(10);
+		redrawMedia(10);
 		redrawlinha();
 	}
 

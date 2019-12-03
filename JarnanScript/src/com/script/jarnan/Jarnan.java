@@ -178,6 +178,16 @@ public class Jarnan extends JFrame implements Runnable {
 		timeThread();
 
 	}
+	public void swi() {
+		String[] s = str.split(" ");
+		String variavelVerifica ="";
+		for (String x1 : s) {
+			
+		}
+
+		timeThread();
+
+	}
 
 	public void println() {
 		String[] s = str.split("prln: ");
@@ -195,7 +205,7 @@ public class Jarnan extends JFrame implements Runnable {
 
 	public void SetVariavel() {
 
-		String[] s = str.split(":");
+		String[] s = str.split(": ");
 
 		setvariavel.add(new String(s[0]));
 		getvariavel.add(new String(s[1]));
@@ -252,6 +262,7 @@ public class Jarnan extends JFrame implements Runnable {
 
 	// ___________________________________
 
+	@SuppressWarnings("rawtypes")
 	public void run() {
 
 		String str0 = "prln: ";
@@ -271,7 +282,7 @@ public class Jarnan extends JFrame implements Runnable {
 
 		}
 
-		String str2 = ":";
+		String str2 = ": ";
 		str = txt_AreaCodigo.getText();
 		if (str.contains(str2)) {
 
@@ -316,7 +327,7 @@ public class Jarnan extends JFrame implements Runnable {
 			grafico.valores(dir);
 			JFrame frame = new JFrame("Jarnan DataScience 1.0v");
 			frame.setVisible(true);
-			frame.setSize(250, 250);
+			frame.setSize(550, 500);
 			frame.add(grafico);
 			frame.setLocation(50, 10);
 
@@ -356,9 +367,9 @@ public class Jarnan extends JFrame implements Runnable {
 
 			DrawLines grafico = new DrawLines();
 			grafico.valoresColDir(dir, Integer.parseInt(col));
-			JFrame frame = new JFrame("Jarnan DataScience 1.0v");
+			JFrame frame = new JFrame("Jarnan DataScience 1.6v");
 			frame.setVisible(true);
-			frame.setSize(250, 250);
+			frame.setSize(550,500);
 			frame.add(grafico);
 			frame.setLocation(50, 10);
 			timeThread();

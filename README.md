@@ -6,6 +6,7 @@ A aplicação tem uma meta de implementar um minerado de dados csv com base em j
 
 ![Screenshot](https://uploaddeimagens.com.br/images/002/517/978/original/jarnan1.5v.png?1574900463)
 
+![Screenshot](https://i.ibb.co/JkZ9dbJ/jarnan-Grafico.png)
 
 ![Screenshot](https://uploaddeimagens.com.br/images/002/517/983/original/jarnan1.5v.png?1574900844)
 

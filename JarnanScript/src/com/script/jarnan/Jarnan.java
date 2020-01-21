@@ -37,6 +37,7 @@ public class Jarnan extends JFrame implements Runnable {
 	* 
 	*/
 	private static final long serialVersionUID = 1L;
+	DrawLines d = new DrawLines();
 	JPanel painel;
 	JLabel lblTitulo;
 	JButton b;
@@ -142,6 +143,7 @@ public class Jarnan extends JFrame implements Runnable {
 		txt_AreaResultado.setEditable(false);
 		txt_AreaResultado.setCaretPosition(txt_AreaResultado.getText().length());
 		txt_AreaResultado.setRows(1);
+		
 		b.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
@@ -222,7 +224,7 @@ public class Jarnan extends JFrame implements Runnable {
 			if (str.trim().equals(setvariavel.get(i).toString())) {
 				txt_AreaResultado.setText(" ");
 
-				txt_AreaResultado.setText("Get: " + str + " = " + getvariavel.get(i).toString());
+				txt_AreaResultado.setText("Get:" + str + " = " + getvariavel.get(i).toString());
 
 				break;
 
@@ -237,7 +239,7 @@ public class Jarnan extends JFrame implements Runnable {
 	public void AtivaFor() {
 		String linha = str;
 
-		String digitos = "";
+		String digitos = " ";
 		char[] letras = linha.toCharArray();
 		for (char letra : letras) {
 			if (Character.isDigit(letra)) {
@@ -262,7 +264,6 @@ public class Jarnan extends JFrame implements Runnable {
 
 	// ___________________________________
 
-	@SuppressWarnings("rawtypes")
 	public void run() {
 
 		String str0 = "prln: ";
@@ -394,48 +395,43 @@ public class Jarnan extends JFrame implements Runnable {
 
 			String ifvalor1 = s1[0];
 			String ifvalor2 = s1[1];
-			if(igual == true)
-			{
-			System.out.println(ifvalor1);
-			System.out.println(ifvalor2);
-			if (ifvalor1.trim().equals(ifvalor2)) {
-				
-				txt_AreaResultado.setText("True! 1");
-			}else if((ifvalor1!=ifvalor2)&&(setvariavel.size() <= 0))
-			{
-			txt_AreaResultado.setText("False! 2");
-			}else{
-			
-				for (int i = 0; i <= setvariavel.size(); i++) {
-					if (ifvalor1.equals(setvariavel.get(i).toString())) {
+			if (igual == true) {
+				System.out.println(ifvalor1);
+				System.out.println(ifvalor2);
+				if (ifvalor1.trim().equals(ifvalor2)) {
 
-						variavelif1 = getvariavel.get(i).toString();
-						System.out.print(variavelif1);
-						break;
+					txt_AreaResultado.setText("True! 1");
+				} else if ((ifvalor1 != ifvalor2) && (setvariavel.size() == 0)) {
+					txt_AreaResultado.setText("False! 2");
+				} else {
 
+					for (int i = 0; i <= setvariavel.size(); i++) {
+						if (ifvalor1.equals(setvariavel.get(i).toString())) {
+
+							variavelif1 = getvariavel.get(i).toString();
+							System.out.print(variavelif1);
+							break;
+
+						}
 					}
-				}
-				for (int j = 0; j <= setvariavel.size(); j++) {
-					if (ifvalor2.equals(setvariavel.get(j).toString())) {
-						variavelif2 = getvariavel.get(j).toString();
-						System.out.print(variavelif2);
-						break;
+					for (int j = 0; j <= setvariavel.size(); j++) {
+						if (ifvalor2.equals(setvariavel.get(j).toString())) {
+							variavelif2 = getvariavel.get(j).toString();
+							System.out.print(variavelif2);
+							break;
 
 						}
 
 					}
 				}
-			if (variavelif1.trim().equals(variavelif2)) {
-				
-				txt_AreaResultado.setText("True! 3");
-			}else if(variavelif1 != variavelif2)
-			{
-			txt_AreaResultado.setText("false 4");
-			}
-				
-			
+				if (variavelif1.trim().equals(variavelif2)) {
 
-			timeThread();
+					txt_AreaResultado.setText("True! 3");
+				} else if (variavelif1 != variavelif2) {
+					txt_AreaResultado.setText("false 4");
+				}
+
+				timeThread();
 			}
 		//_____
 	}
@@ -458,7 +454,144 @@ public class Jarnan extends JFrame implements Runnable {
 
 			timeThread();
 			}
+		
+		String str11 = "sum-> ";
+
+		if (str.contains(str11)) {
+			String[] strlinha = str.split("sum-> ");
+			String linha = strlinha[1];
+			
+			String[] s = linha.split(" ");
+			System.out.println(s[0]);
+			System.out.println(s[1]);
+
+			int x = Integer.parseInt(s[0]);
+			
+			int y = Integer.parseInt(s[1]); 
+			
+		
+			
+			txt_AreaResultado.setText("Calculo da soma: " + (x+y) + " \n");
+
+			timeThread();
+			}
+		
+		String str12 = "m-> ";
+
+		if (str.contains(str12)) {
+			String[] strlinha = str.split("m-> ");
+			String linha = strlinha[1];
+			
+			String[] s = linha.split(" ");
+			System.out.println(s[0]);
+			System.out.println(s[1]);
+
+			int x = Integer.parseInt(s[0]);
+			
+			int y = Integer.parseInt(s[1]); 
+			
+		
+			
+			txt_AreaResultado.setText("Calculo da multiplicação: " + (x*y) + " \n");
+
+			timeThread();
+			}
+			
+		String str13 = "d-> ";
+
+		if (str.contains(str13)) {
+			String[] strlinha = str.split("d-> ");
+			String linha = strlinha[1];
+			
+			String[] s = linha.split(" ");
+			System.out.println(s[0]);
+			System.out.println(s[1]);
+
+			int x = Integer.parseInt(s[0]);
+			
+			int y = Integer.parseInt(s[1]); 
+			
+		
+			
+			txt_AreaResultado.setText("Calculo da divisão: " + (x/y) + " \n");
+
+			timeThread();
+			}
+			
+		String str14 = "sub-> ";
+
+		if (str.contains(str14)) {
+			String[] strlinha = str.split("sub-> ");
+			String linha = strlinha[1];
+			
+			String[] s = linha.split(" ");
+			System.out.println(s[0]);
+			System.out.println(s[1]);
+
+			int x = Integer.parseInt(s[0]);
+			
+			int y = Integer.parseInt(s[1]); 
+			
+		
+			
+			txt_AreaResultado.setText("Calculo da subtração: " + (x-y) + " \n");
+
+			timeThread();
+			}
+		
+		String str15 = "tol=> -d -num -col ";
+
+		if (str.contains(str15)) {
+		
+
+			timeThread();
+			}
+		
+		String str16 = "med=> -d -col ";
+
+		if (str.contains(str16)) {
+		
+			String[] strlinha = str.split("med=> -d -col ");
+			String linha = strlinha[1];
+			
+			String[] s = linha.split(" ");
+			System.out.println(s[0]);
+			System.out.println(s[1]);
+		
+			d.media(s[0],Integer.parseInt(s[1]));
+			
+			txt_AreaResultado.setText("Media de valor da coluna "+s[1]+" é: "+ d.Pmedia+"\n");
+			timeThread();
+			}
+				
+		String str17 = "min=> -d -col ";
+
+		if (str.contains(str17)) {
+		
+
+			timeThread();
+			}
+			
+		String str18 = "max=> -d -col ";
+
+		if (str.contains(str18)) {
+		
+
+			timeThread();
+			}
+			
+		String str19 = "v=> -d -col ";
+
+		if (str.contains(str18)) {
+		
+
+			timeThread();
+			}
+			
+	
+		
 		}
+	
 
 	public void timeThread() {
 

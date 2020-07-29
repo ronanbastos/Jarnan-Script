@@ -45,7 +45,7 @@ ________________________________________________________________________________
 3.verifica variavel [x]
 
 
-x:1500
+x:10500
 
 ![Screenshot](https://uploaddeimagens.com.br/images/002/516/307/original/jarnanvariavel.png?1574804712)
 

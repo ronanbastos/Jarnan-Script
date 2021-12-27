@@ -1,5 +1,5 @@
 # Jarnan-Script
-
+[ Projeto desativado]
 jarnan é uma linguagem do tipo script otimização com uso da base java...
 Foi feita uma interface jframe com programação java pura e simples.
 A aplicação tem uma meta de implementar um minerado de dados csv com base java.
@@ -13,7 +13,7 @@ A aplicação tem uma meta de implementar um minerado de dados csv com base java
 
 ____________________________________________________________________________________________________________________________________
 
-Indices: [x] = Completo / [n] = Não feito  / [b]= Erro ou bug / [a]=Atulizado / [ñ]=Incompleto / [att] = Proxima atulização
+Indices: [x] = Completo / [n] = Não feito  / [b]= Erro ou bug / [a]=Atulizado / [ñ]=Incompleto / 
 
 Verifique as atualizações:( https://github.com/ronanbastos/Jarnan-Script/blob/master/Att )
 ____________________________________________________________________________________________________________________________________

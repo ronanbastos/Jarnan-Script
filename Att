@@ -1,21 +1,19 @@
-[ATT 1.6V 01/12/2019]{
-[+]verificador de ação com imagem x e v.
-[+]novo item na pasta utili as amagem x e v,que faz ofeito um false e true na imagem.
-[+]função de verificação de new Thread(new Runnable()).
-[+]função if com logica que retorna false e true.
-[+]função de soma de variaveis.
-[+]correção de bug na local de codigo.
-[+]função cache e clear cache.
-[+]função clear, que limpa o console.
-[+]função de grafico de linhas com comandos Point2D e Line2D.
-}
-[ATT 1.5V 27/11/2019]{
-[+]Novo visual
-[+]Comando de csv inline g -d -> arquivo.csv e g -d -col arquivo.csv 2.
-[+]Ajuste e limpesa de codigo e pré revisão para remover bug da 1.6 versão next.
-[+]button e console modificado com imagem personalizada. 
-[+]criação das pasta path e utili.
+[ATT 1.6V 01/12/2019]: 
 
-}
+    Adicionado verificador de ação com as imagens "x" e "v". 
+    Novo item na pasta "utili": as imagens "x" e "v" agora poss 
+    Adicionada função de verificação de nova Thread: "(new Runnable())". 
+    Adicionada função "if" com lógica que retorna "false" e "true". 
+    Adicionada função de soma de variáveis. 
+    Correção de bug no local do código. 
+    Adicionadas funções "cache" e "clear cache". 
+    Adicionada função "clear", que limpa o console. 
+    Adicionada função de gráfico de linhas com comandos "Point2D" e "Line2D". 
 
+[ATT 1.5V 27/11/2019]: 
 
+    Novo visual. 
+    Adicionado comando de CSV inline "g -d -> arquivo.csv" e "g -d -col arquivo.csv 2". 
+    Ajuste e limpeza de código e pré-revisão para remover o bug da próxima versão 1.6. 
+    Botão e console modificados com imagem personalizada. 
+    Criação das pastas "path" e "utili". 
